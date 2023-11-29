@@ -1,0 +1,70 @@
+<h1>  Book My Show</h1>
+<div class="container">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    MovieName
+                </td>
+                <td> <input type="text" [(ngModel)]="movie.movieName">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Director
+                </td>
+                <td> <input type="text" [(ngModel)]="movie.director">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Actors
+                </td>
+                <td> <input type="text" [(ngModel)]="movie.actor">
+                </td>
+            </tr>
+           <tr>
+            <td>ReleaseDate</td>
+            <td><input type="date"[(ngModel)]="movie.releaseDate"></td>
+           </tr>
+           <tr>
+            <td>lang</td>
+            <td>
+                <select [(ngModel)]="movie.lang">
+                    <option *ngFor="let item of lang">{{item}}</option>
+                </select>
+            </td>
+        </tr>
+      <tr>
+        <td colspan="3">
+            <button (click)="AddMovie()">submit</button> 
+        </td>
+      </tr>
+       
+        </tbody>
+    </table>
+    <hr>
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>MovieId</th>
+                <th>MovieName</th>
+                <th>ReleaseDate</th>
+                <th>Director</th>
+                <th>Actors</th>
+                <th>lang</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of movies">
+                <td>{{item.movieId}}</td>
+                <td>{{item.movieName}}</td>
+                <td>{{item.releaseDate}}</td>
+                <td>{{item.director}}</td>
+                <td>{{item.lang}}</td>
+                
+            </tr>
+        </tbody>
+
+    </table>
+</div>
